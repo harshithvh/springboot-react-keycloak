@@ -75,15 +75,13 @@ As `Keycloak` supports [`PKCE`](https://tools.ietf.org/html/rfc7636) (`Proof Key
     ./mvnw clean spring-boot:run -Dspring-boot.run.jvmArguments="-Dserver.port=9080"
     ```
 
-    Once the startup finishes, `KeycloakInitializerRunner.java` class will run and initialize `company-services` realm in `Keycloak`. Basically, it will create:
+    Once the startup finishes, `KeycloakInitializerRunner.java` class will run and initialize `company-services` in `Keycloak`. Basically, it will create:
     - Realm: `company-services`
     - Client: `movies-app`
     - Client Roles: `MOVIES_MANAGER` and `USER`
     - Two users
       - `admin`: with roles `MANAGE_MOVIES` and `USER`
       - `user`: only with role `USER`
-
-  - We can also configure **Social Identity Providers** such as, `GitHub`, `Google`, `Facebook` and `Instagram`. I've written two articles in **Medium** where I explain step-by-step how to integrate [GitHub](https://medium.com/@ivangfr/integrating-github-as-a-social-identity-provider-in-keycloak-982f521a622f) and [Google](https://medium.com/@ivangfr/integrating-google-as-a-social-identity-provider-in-keycloak-c905577ec499).
 
 - **movies-ui**
 
@@ -107,15 +105,6 @@ As `Keycloak` supports [`PKCE`](https://tools.ietf.org/html/rfc7636) (`Proof Key
 | movie-ui    | http://localhost:3000                 | `admin/admin` or `user/user`          |
 | Keycloak    | http://localhost:8080/admin           | `admin/admin`                         |
 
-## Demo
-
-- The gif below shows an `admin` logging in and adding one movie using the wizard feature
-
-  ![demo-admin](documentation/demo-admin.gif)
-
-- The gif below shows a `user` logging in using his Github account; then he changes his avatar and comment a movie
-
-  ![demo-user-github](documentation/demo-user-github.gif)
 
 ## Testing movies-api endpoints
 
